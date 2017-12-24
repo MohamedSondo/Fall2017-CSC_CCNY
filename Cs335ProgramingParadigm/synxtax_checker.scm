@@ -1,0 +1,199 @@
+;Write, and prove correct, a syntax checker for TLS-Scheme.  Use the inductive definition of TLS-Scheme given in lecture15.scm.  You
+;will need to give a complete specification for your program.
+
+;I note that this problem has occurred as a final exam problem in CSc 335 in a past semester.
+
+(define sc 
+  (lambda (e)
+    (syn-checker e '())))
+
+(define syn-checker
+  (lambda (e table)
+    (cond ((not (pair? e)) (atom-checker e table))
+          (else (list-checker e table)))))
+
+(define atom-checker
+  (lambda (e table)
+    (cond ((number? e) #t)
+          ((eq? e #t) #t)
+          ((eq? e #f) #t)
+          ((eq? e (quote cons)) #t)
+          ((eq? e (quote car)) #t)
+          ((eq? e (quote cdr)) #t)
+          ((eq? e (quote null?)) #t)
+          ((eq? e (quote eq?)) #t)
+          ((eq? e (quote atom?)) #t)
+          ((eq? e (quote zero?)) #t)
+          ((eq? e (quote add1)) #t)
+          ((eq? e (quote mul)) #t)
+          ((eq? e (quote sub1)) #t)
+          ((eq? e (quote number?)) #t)
+          ((eq? e (quote ())) #t)
+          (else (cover-checker (list e) table)))))
+
+(define cover-checker
+  (lambda (arg table)
+    (cond ((null? arg) #t)
+          ((not (pair? (car arg)))
+           (cond ((number? (car arg)) (cover-checker (cdr arg) table))
+                 ((boolean? (car arg)) (cover-checker (cdr arg) table))
+                 (else (member? (car arg) (fringe table)))))
+          (else (and (cover-checker (car arg) table)
+                     (cover-checker (cdr arg) table))))))
+
+(define (fringe tree)
+  (cond ((null? tree) '())
+        ((not (pair? tree)) (list tree))
+        (else (append (fringe (car tree))
+                      (fringe (cdr tree))))))    
+(define member?
+  (lambda (atom lst)
+    (if (member atom lst)
+        #t
+        #f)))
+
+(define list-checker
+  (lambda (e table)
+    (cond ((not (pair? (car e)))
+           (cond ((eq? (car e) (quote quote)) (*quote-checker e table))
+                 ((eq? (car e) (quote lambda)) (*lambda-checker (cons table (cdr e))))
+                 ((eq? (car e) (quote cond)) (*cond-checker (cond-lines-of e) table))
+                 (else (*application-checker e table))))
+          (else  (*application-checker e table)))))
+
+(define *quote-checker
+  (lambda (e table)
+    (= 2 (length e))))
+
+(define *lambda-checker
+  (lambda (closure)
+    (if (null? (body-of closure)) 
+        #f
+        (closure-checker
+         (body-of closure)
+         (extend-table (formals-of closure) (table-of closure))))))
+
+(define closure-checker
+  (lambda (e table)
+    (cond ((not (pair? e))
+           (cover-checker (list e) table))
+          (else (syn-checker e table)))))
+
+(define cond-lines-of cdr)
+(define question-of car)
+(define answer-of cadr)
+
+(define table-of car)
+(define formals-of cadr)
+(define body-of caddr)
+
+(define extend-table cons)
+
+(define *cond-checker
+  (lambda (lines table)
+    (cond ((null? lines) #t)
+          ((null? (cdr (car lines))) #f)
+          ((eq? (quote else) (question-of (car lines)))
+           (syn-checker (answer-of (car lines)) table))
+          (else (and
+                 (if (syn-checker (question-of (car lines)) table)
+                     (syn-checker (answer-of (car lines)) table)
+                     #f)
+                 (*cond-checker (cdr lines) table))))))   
+
+(define *application-checker
+  (lambda (e table)
+    (cond 
+      ((eq? (car e) (quote cons))
+       (and (= 2 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote car))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq?(car e) (quote cdr))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote null?))
+       (syn-checker (cdr e) table))
+      ((eq? (car e) (quote eq?))
+       (and (= 2 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote atom?))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table))) 
+      ((eq? (car e) (quote zero?))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote add1))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote mul))
+       (and (= 2 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote sub1))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      ((eq? (car e) (quote number?))
+       (and (= 1 (length (cdr e)))
+            (syn-checker (cdr e) table)))
+      (else (and (syn-checker (car e) table)
+                 (syn-checker (cdr e) table)))))) 
+
+;some test cases: #t
+(sc '(lambda (x) x))
+(sc '(lambda (x) y))
+(sc '(cond ((1 2) (3 4))))
+(sc '(sub1 4))
+(sc '(mul 3 5))
+(sc'(eq? 1 1.0))
+(sc '(mul (add1 3) (sub1 4)))
+(sc '(cond (#f 1) (#t 2)))
+(sc '(cond ((number? (quote x)) 1) (else 2)))
+(sc '(mul (add1 (cond (#f 1) (#f 2) (else 3))) 4))
+(sc '(cons (quote x) (quote ())))
+(sc '(car (cons (quote x) (quote y))))
+(sc '((lambda (x) (add1 x)) 3))
+(sc '((lambda (x) (add1 x))
+      ((lambda (x) (add1 x)) 4)))
+
+
+(sc '(((lambda (y)
+         (lambda (x) (cons x y)))
+       3)
+      4))
+
+
+(sc '((lambda (x z)
+        (cons x
+              ((lambda (x y) (cons z x))
+               3 4)
+              ))
+      1 2))
+
+
+(sc '((lambda (f y)
+        (f y))
+      (lambda (x) (add1 x))
+      4))
+
+
+(sc '((lambda (f y)
+        (f y))
+      ((lambda (x) (cond ((number? x) add1)
+                         (else (lambda (y) (cons x y)))))
+       (quote z))
+      
+      3))
+
+
+;some test cases: #f
+(newline)(newline)
+(sc '((lambda (y) (add1 x))
+      ((lambda (x) (add1 x)) 4)))
+
+(sc '((lambda (x z)
+        (cons y
+              ((lambda (x y) (cons z x))
+               3 4)
+              ))
+      1 2))

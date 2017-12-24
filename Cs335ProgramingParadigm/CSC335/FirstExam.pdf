@@ -1,0 +1,310 @@
+%!PS-Adobe-3.0
+%%Title: FirstExam.scm
+%%For: sorou
+%%Creator: VIM - Vi IMproved 7.4 (2013 Aug 10)
+%%CreationDate: Mon Sep 26 20:56:57 2016
+%%DocumentData: Clean8Bit
+%%Orientation: Portrait
+%%Pages: (atend)
+%%PageOrder: Ascend
+%%BoundingBox: 59 49 564 800
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%DocumentSuppliedResources: procset VIM-Prolog 1.4 1
+%%+ encoding VIM-latin1 1.0 0
+%%Requirements: duplex collate color
+%%EndComments
+%%BeginDefaults
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%PageMedia: A4
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset VIM-Prolog
+%%BeginDocument: /usr/share/vim/vim74/print/prolog.ps
+%!PS-Adobe-3.0 Resource-ProcSet
+%%Title: VIM-Prolog
+%%Version: 1.4 1
+%%EndComments
+% Editing of this file is NOT RECOMMENDED.  You run a very good risk of causing
+% all PostScript printing from VIM failing if you do.  PostScript is not called
+% a write-only language for nothing!
+/packedarray where not{userdict begin/setpacking/pop load def/currentpacking
+false def end}{pop}ifelse/CP currentpacking def true setpacking
+/bd{bind def}bind def/ld{load def}bd/ed{exch def}bd/d/def ld
+/db{dict begin}bd/cde{currentdict end}bd
+/T true d/F false d
+/SO null d/sv{/SO save d}bd/re{SO restore}bd
+/L2 systemdict/languagelevel 2 copy known{get exec}{pop pop 1}ifelse 2 ge d
+/m/moveto ld/s/show ld /ms{m s}bd /g/setgray ld/r/setrgbcolor ld/sp{showpage}bd
+/gs/gsave ld/gr/grestore ld/cp/currentpoint ld
+/ul{gs UW setlinewidth cp UO add 2 copy newpath m 3 1 roll add exch lineto
+stroke gr}bd
+/bg{gs r cp BO add 4 -2 roll rectfill gr}bd
+/sl{90 rotate 0 exch translate}bd
+L2{
+/sspd{mark exch{setpagedevice}stopped cleartomark}bd
+/nc{1 db/NumCopies ed cde sspd}bd
+/sps{3 db/Orientation ed[3 1 roll]/PageSize ed/ImagingBBox null d cde sspd}bd
+/dt{2 db/Tumble ed/Duplex ed cde sspd}bd
+/c{1 db/Collate ed cde sspd}bd
+}{
+/nc{/#copies ed}bd
+/sps{statusdict/setpage get exec}bd
+/dt{statusdict/settumble 2 copy known{get exec}{pop pop pop}ifelse
+statusdict/setduplexmode 2 copy known{get exec}{pop pop pop}ifelse}bd
+/c{pop}bd
+}ifelse
+/ffs{findfont exch scalefont d}bd/sf{setfont}bd
+/ref{1 db findfont dup maxlength dict/NFD ed{exch dup/FID ne{exch NFD 3 1 roll
+put}{pop pop}ifelse}forall/Encoding findresource dup length 256 eq{NFD/Encoding
+3 -1 roll put}{pop}ifelse NFD dup/FontType get 3 ne{/CharStrings}{/CharProcs}
+ifelse 2 copy known{2 copy get dup maxlength dict copy[/questiondown/space]{2
+copy known{2 copy get 2 index/.notdef 3 -1 roll put pop exit}if pop}forall put
+}{pop pop}ifelse dup NFD/FontName 3 -1 roll put NFD definefont pop end}bd
+CP setpacking
+(\004)cvn{}bd
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%BeginResource: encoding VIM-latin1
+%%BeginDocument: /usr/share/vim/vim74/print/latin1.ps
+%!PS-Adobe-3.0 Resource-Encoding
+%%Title: VIM-latin1
+%%Version: 1.0 0
+%%EndComments
+/VIM-latin1[
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quotesingle
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash
+/zero /one /two /three /four /five /six /seven
+/eight /nine /colon /semicolon /less /equal /greater /question
+/at /A /B /C /D /E /F /G
+/H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+/grave /a /b /c /d /e /f /g
+/h /i /j /k /l /m /n /o
+/p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis]
+/Encoding defineresource pop
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%EndProlog
+%%BeginSetup
+595 842 0 sps
+1 nc
+T F dt
+T c
+%%IncludeResource: font Courier
+/_F0 /VIM-latin1 /Courier ref
+/F0 10 /_F0 ffs
+%%IncludeResource: font Courier-Bold
+/_F1 /VIM-latin1 /Courier-Bold ref
+/F1 10 /_F1 ffs
+%%IncludeResource: font Courier-Oblique
+/_F2 /VIM-latin1 /Courier-Oblique ref
+/F2 10 /_F2 ffs
+%%IncludeResource: font Courier-BoldOblique
+/_F3 /VIM-latin1 /Courier-BoldOblique ref
+/F3 10 /_F3 ffs
+/UO -1 d
+/UW 0.5 d
+/BO -2.5 d
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(FirstExam.scm                                                                 Page 1)59.5 792.4 ms
+F0 sf
+0.263 0.404 0.459 r
+(; CSc 335)59.5 762.4 ms
+(; Spring 2016)59.5 752.4 ms
+(; March 8)59.5 732.4 ms
+(; First 1.25 Hour Exam)59.5 712.4 ms
+(; Professor Troeger)59.5 692.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 662.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 652.4 ms
+(; TYPE YOUR NAME HERE:)59.5 632.4 ms
+(; TYPE YOUR FULL EMAIL ADDRESS HERE:)59.5 612.4 ms
+(; \(I will email your graded paper to this address\))59.5 602.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 582.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 572.4 ms
+(;;;; Scoring Template - Do NOT Erase!)59.5 552.4 ms
+(;;;; Problem 1a - code \(max 10 points\))59.5 532.4 ms
+(;;;; Problem 1b - code \(max 5 points\))59.5 522.4 ms
+(;;;; Problem 2a - code \(max 15 points\))59.5 502.4 ms
+(;;;; Problem 2b - proof \(max 15 points\))59.5 492.4 ms
+(;;;; Problem 3 - code \(max 10 points\))59.5 472.4 ms
+(;;;; Problem 3 - proof \(max 15 points\))59.5 462.4 ms
+(;;;; Problem 4a - code \(max 5 points\))59.5 442.4 ms
+(;;;; Problem 4b - code \(max 10 points\))59.5 432.4 ms
+(;;;; Problem 4c - proof \(max 15 points\))59.5 422.4 ms
+(;;;; Total)59.5 382.4 ms
+(;;;; Letter Grade)59.5 372.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 352.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 342.4 ms
+(; You have full access to drracket for this exam. All problems are to be solved usin)59.5 322.4 ms
+(g the R5RS)59.5 312.4 ms
+(; implementation provided by drracket and only those language features discussed so )59.5 302.4 ms
+(far in the)59.5 292.4 ms
+(; context of lectures and homework.)59.5 282.4 ms
+(; Collaboration of any kind is not permitted: you are to work alone; email and inter)59.5 262.4 ms
+(net access have been disabled.)59.5 252.4 ms
+(; Smart phones are to be switched off and placed on the desk in front of you.  They )59.5 232.4 ms
+(are not to leave the room.)59.5 222.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 202.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 192.4 ms
+(; YOU SHOULD INSERT YOUR ANSWERS INTO THE EXAM DIRECTLY FOLLOWING EACH QUESTION.)59.5 172.4 ms
+(; BE SURE TO SAVE YOUR WORK FREQUENTLY.)59.5 152.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 132.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 122.4 ms
+(; Here are the examination problems.  )59.5 92.4 ms
+re sp
+%%PageTrailer
+%%Page: 2 2
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(FirstExam.scm                                                                 Page 2)59.5 792.4 ms
+F0 sf
+0.263 0.404 0.459 r
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 772.4 ms
+(;;;;;;)59.5 762.4 ms
+(; 1a. \(10 points\) Write a Scheme function power of one integer argument b which)59.5 742.4 ms
+(; returns a function of one integer argument n so that)59.5 732.4 ms
+(; \(\(power b\) n\))59.5 712.4 ms
+(; is b to the nth power.  Thus \(\(power 10\) 3\) = 1000.  You may assume n >= 0; a)59.5 692.4 ms
+(; design requirement is that the function have no unnecessary parameter passing.)59.5 682.4 ms
+(; \(No proof is required.\))59.5 662.4 ms
+0.498 0.435 0.337 r
+(\()59.5 642.4 ms
+F1 sf
+0.471 0.451 0.275 r
+(define)s
+F0 sf
+0 g
+( )s
+0.498 0.435 0.337 r
+(\()s
+0 g
+(power f n)s
+0.498 0.435 0.337 r
+(\))s
+0 g
+(  )59.5 632.4 ms
+0.498 0.435 0.337 r
+(\()s
+(\()59.5 622.4 ms
+F1 sf
+0.471 0.451 0.275 r
+(define)s
+F0 sf
+0 g
+( )s
+0.498 0.435 0.337 r
+(\()s
+0 g
+(power-of-one b)s
+0.498 0.435 0.337 r
+(\))s
+0 g
+(  )59.5 612.4 ms
+0.498 0.435 0.337 r
+(\()s
+0.263 0.404 0.459 r
+(; 1b. \(5 points\) Show that you understand the point of writing an exponentiation fun)59.5 592.4 ms
+(ction)59.5 582.4 ms
+(; this way by using your solution to 1a to write a function which computes)59.5 572.4 ms
+(; non-negative powers of 10.)59.5 562.4 ms
+(; \(No proof is required.\))59.5 542.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 522.4 ms
+(;;;;;)59.5 512.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 462.4 ms
+(;;;;;;;)59.5 452.4 ms
+(; 2a.  \(15 points\) Write an iterative function)59.5 432.4 ms
+(;        LargestIntegerSmallerThanNumWhichDoesNotContainDigits)59.5 422.4 ms
+(; with integer arguments num, digit1, digit2, and digit3 which returns the largest i)59.5 412.4 ms
+(nteger)59.5 402.4 ms
+(; smaller than num which contains none of the digits digit1, digit2, or digit3.  Thu)59.5 392.4 ms
+(s)59.5 382.4 ms
+(;      \(LargestIntegerSmallerThanNumWhichDoesNotContainDigits 450 1 4 7\) = 399.)59.5 372.4 ms
+(; 2b. \(15 points\) Prove that the function you write for 2a is correct. )59.5 352.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 322.4 ms
+(;;;;;;;)59.5 312.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 262.4 ms
+(;;;;;;;)59.5 252.4 ms
+(; 3a. \(10 points\) Write a recursive program reverse-number to reverse the digits of )59.5 232.4 ms
+(a number.)59.5 222.4 ms
+(; For example,\(reverse-number 0\) = 0, \(reverse-number 1234\) = 4321.  You may assume )59.5 212.4 ms
+(that)59.5 202.4 ms
+(; the input is a non-negative integer.)59.5 192.4 ms
+(; 3b. \(15 points\) Prove by induction that a call \(reverse-number n\) of your function)59.5 162.4 ms
+(; reverse-number actually does return the number with digits the same as those)59.5 152.4 ms
+(; of n, but in reverse order.  You should give only one induction: if you use)59.5 142.4 ms
+(; more than one recursion to solve the problem, prove only the most important.)59.5 132.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 112.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 62.4 ms
+re sp
+%%PageTrailer
+%%Page: 3 3
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(FirstExam.scm                                                                 Page 3)59.5 792.4 ms
+F0 sf
+0.263 0.404 0.459 r
+(; 4a. \(5 points\) Write a simple and reasonably efficient program prime? to determine)59.5 772.4 ms
+(; whether an integer n > 0 is prime.)59.5 762.4 ms
+(; 4b. \(10 points\) Write a Scheme function invariant-under-reverse? which inputs)59.5 732.4 ms
+(; a predicate p and an integer n > 0 and which outputs the nth integer m for which)59.5 722.4 ms
+(; both m and its reverse satisfy the predicate p.  Thus, if n = 5 and p = prime?,)59.5 712.4 ms
+(; \(invariant-under-reverse? prime? 5\) = 11.)59.5 702.4 ms
+(; Note that the reverse of a single digit number is that number itself; note that)59.5 682.4 ms
+(; this function need not be iterative, despite its name; note that this problem)59.5 672.4 ms
+(; builds on Problem 3.)59.5 662.4 ms
+(; 4c. \(15 points\) Give a proof of the function you write for 4b.)59.5 632.4 ms
+(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;)59.5 612.4 ms
+re sp
+%%PageTrailer
+%%Trailer
+%%Pages: 3
+%%EOF
+

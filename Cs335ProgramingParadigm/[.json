@@ -1,0 +1,362 @@
+  [
+    {
+      "PDF_ID":"A.1.1. Main Street Interlocking – No Service to Main Street Terminal",
+      "IMAGE_ID":"Interlocking Diagrams_Page_063",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Main Street Interlocking - No Service to Main Street Terminal",
+      "SUB_PDF_FLAG":"1"
+   },
+   {
+      "PDF_ID":"A.1.2. Willets Point Interlocking – No Service North of 111 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Willets Point Interlocking - No Service North of 111 St",
+      "SUB_PDF_FLAG":"1"
+   },
+  {
+    "PDF_ID": "A.1.3. 74 St Interlocking – No service north of 74 St-Broadway.",
+    "IMAGE_ID": "Interlocking Diagrams_Page_060",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "74 St Interlocking - No service north of 74 St-Broadway.",
+    "SUB_PDF_FLAG": "1"
+  },
+    {
+      "PDF_ID": "A.1.4. 33rd Street Interlocking – No Use of Switches South of 33 St-Rawson",
+      "IMAGE_ID": "Interlocking Diagrams_Page_059",
+      "LINE": "7",
+      "ATS_ID": "",
+      "SEARCH_DATA": "33rd Street Interlocking - No Use of Switches South of 33 St-Rawson",
+      "SUB_PDF_FLAG": "1"
+    },
+   {
+      "PDF_ID":"A.1.5. Queensboro Plaza Interlocking – No service north of Queensboro Plaza",
+      "IMAGE_ID":"Interlocking Diagrams_Page_058",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Queensboro Plaza Interlocking - No service north of Queensboro Plaza",
+      "SUB_PDF_FLAG":"1"
+   },
+   {
+      "PDF_ID":"A.1.6. Hunters Point Av Interlocking – No service north of Hunters Point Av",
+      "IMAGE_ID":"Interlocking Diagrams_Page_057",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Hunters Point Av Interlocking - No service north of Hunters Point Av",
+      "SUB_PDF_FLAG":"1"
+   },
+   {
+      "PDF_ID":"A.1.7. 1 Av Interlocking – No service north of Grand Central",
+      "IMAGE_ID":"Interlocking Diagrams_Page_056",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"1 Av Interlocking - No service north of Grand Central",
+      "SUB_PDF_FLAG":"1"
+   },
+   {
+      "PDF_ID":"A.1.8. Times Sq42 St Interlocking No service north of Times Sq42 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_055 ; Interlocking Diagrams_Page_056",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Times Sq42 St Interlocking No service north of Times Sq42 St,
+      "SUB_PDF_FLAG":"1"
+   },
+    {
+      "PDF_ID": "A.1.9. 34 St-Hudson Yards Interlocking – No service south of Times Sq-42 St",
+      "IMAGE_ID": "Interlocking Diagrams_Page_063",
+      "LINE": "7",
+      "ATS_ID": "",
+      "SEARCH_DATA": "34 St-Hudson Yards Interlocking - No service south of Times Sq-42 St",
+      "SUB_PDF_FLAG": "1"
+    },
+  {
+    "PDF_ID": "A.2.1. Flushing-Main St Station",
+    "IMAGE_ID": "Interlocking Diagrams_Page_063",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Flushing-Main St Station",
+    "SUB_PDF_FLAG": "1"
+  },
+    {
+      "PDF_ID": "A.2.1.1. Blockage: Track C1 Flushing-Main St Station (Switches 815 & 805 Available)",
+      "IMAGE_ID": "Interlocking Diagrams_Page_063",
+      "LINE": "7",
+      "ATS_ID": "",
+      "SEARCH_DATA": "Blockage: Track C1 Flushing-Main St Station (Switches 815 & 805 Available)",
+      "SUB_PDF_FLAG": "0"
+    },
+  {
+    "PDF_ID": "A.2.1.2. Blockage: Track CM Flushing-Main St Station",
+    "IMAGE_ID": "Interlocking Diagrams_Page_063",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track CM Flushing-Main St Station",
+    "SUB_PDF_FLAG": "0"
+  },
+  {
+    "PDF_ID": "A.2.1.3. Blockage: Track C2 Flushing-Main St Station",
+    "IMAGE_ID": "Interlocking Diagrams_Page_063",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track C2 Flushing-Main St Station",
+    "SUB_PDF_FLAG": "0"
+  },
+   {
+      "PDF_ID":"A.2.2. South of Main Street – North of Willets Point",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"South of Main Street - North of Willets Point",
+      "SUB_PDF_FLAG":"1"
+   },
+   {
+      "PDF_ID":"A.2.2.1. Blockage: Track C1 from south of Main Street between switch 813A and Switch 737A",
+      "IMAGE_ID":"Interlocking Diagrams_Page_063",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from south of Main Street between switch 813A and Switch 737A",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.2.2. Blockage: Track CM South of Main Street between Switch 813B and Switch 737B",
+      "IMAGE_ID":"Interlocking Diagrams_Page_063",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track CM South of Main Street between Switch 813B and Switch 737B",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.2.3. Blockage: Track C2 North of Willets Point between Switch 755B and 803B",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 North of Willets Point between Switch 755B and 803B",
+      "SUB_PDF_FLAG":"0"
+   },
+  {
+    "PDF_ID": "A.2.3. Mets-Willets Point Station",
+    "IMAGE_ID": "Interlocking Diagrams_Page_062",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Mets-Willets Point Station",
+    "SUB_PDF_FLAG": "1"
+  },
+   {
+      "PDF_ID":"A.2.3.1. Blockage: Track C1 Willets Point Station.",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 Willets Point Station.",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.3.2. Blockage: Track CM Willets Point Station",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track CM Willets Point Station",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.3.3. Blockage: Track C2 Willets Point Station",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 Willets Point Station",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.4. MetsWillets Point to 111 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062 ; Interlocking Diagrams_Page_061",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"MetsWillets Point to 111 St",
+      "SUB_PDF_FLAG":"1"
+   },
+  {
+    "PDF_ID": "A.2.4.1.  Blockage: Track C1 South of Willets Point between Switch 725A and Switch 603A",
+    "IMAGE_ID": "Interlocking Diagrams_Page_062",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track C1 South of Willets Point between Switch 725A and Switch 603A",
+    "SUB_PDF_FLAG": "0"
+  },
+   {
+      "PDF_ID":"A.2.4.2. Blockage: Track CM South of Willets Point Switch 727B and Switch 571B.",
+      "IMAGE_ID":"Interlocking Diagrams_Page_062",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track CM South of Willets Point Switch 727B and Switch 571B.",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.4.3. Blockage: Track C2 North of 111th Street between Switch 625B and 723B",
+      "IMAGE_ID":"Interlocking Diagrams_Page_061",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 North of 111th Street between Switch 625B and 723B",
+      "SUB_PDF_FLAG":"0"
+   },
+  {
+    "PDF_ID": "A.2.5. 111 St to 82 St-Jackson Hts",
+    "IMAGE_ID": "Interlocking Diagrams_Page_061 ; Interlocking Diagrams_Page_060",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "111 St to 82 St-Jackson Hts",
+    "SUB_PDF_FLAG": "1"
+  },
+  {
+    "PDF_ID": "A.2.5.1. Blockage: Track C1 from 111 St to 82 St-Jackson Hts",
+    "IMAGE_ID": "Interlocking Diagrams_Page_061 ; Interlocking Diagrams_Page_060",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track C1 from 111 St to 82 St-Jackson Hts",
+    "SUB_PDF_FLAG": "0"
+  },
+  {
+    "PDF_ID": "A.2.5.2. Blockage: Track C2 from 82 St-Jackson Hts to 111 St",
+    "IMAGE_ID": "Interlocking Diagrams_Page_060 ; Interlocking Diagrams_Page_061",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track C2 from 82 St-Jackson Hts to 111 St",
+    "SUB_PDF_FLAG": "0"
+  },
+  {
+    "PDF_ID": "A.2.5.3. Blockage: Track CM from to 111 St to 82 St-Jackson Hts",
+    "IMAGE_ID": "Interlocking Diagrams_Page_061 ; Interlocking Diagrams_Page_060",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track CM from to 111 St to 82 St-Jackson Hts",
+    "SUB_PDF_FLAG": "0"
+  },
+   {
+      "PDF_ID":"A.2.5.4. Blockage: Track C1 at 74 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 at 74 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.5. Blockage: Track C2 at 74 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 at 74 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.6. Blockage: Track CM at 74 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track CM at 74 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.7. Blockage: Track C1 from 74 St to 33 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060 ; Interlocking Diagrams_Page_059",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from 74 St to 33 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.8. Blockage: Track C2 from 33 St to south of 74 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_059 ; Interlocking Diagrams_Page_060",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 from 33 St to south of 74 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.9. Blockage: Track CM from 74 St to 33 St",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060 ; Interlocking Diagrams_Page_059",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track CM from 74 St to 33 St",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.10. Blockage: Track C1 from 74 St to 33 St (No use of Switch 465)",
+      "IMAGE_ID":"Interlocking Diagrams_Page_060 ; Interlocking Diagrams_Page_059",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from 74 St to 33 St (No use of Switch 465)",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.11. Blockage: Track C2 from 33 St to 74 St (No use of Switch 463B)",
+      "IMAGE_ID":"Interlocking Diagrams_Page_059 ; Interlocking Diagrams_Page_060",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 from 33 St to 74 St (No use of Switch 463B)",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.12. Blockage: Track C1 from 33 St to Hunters Pt",
+      "IMAGE_ID":"Interlocking Diagrams_Page_059 ; Interlocking Diagrams_Page_057",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from 33 St to Hunters Pt",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.13. Blockage: Track C2 from Hunters Pt to 33 St (Switch 331 is available)",
+      "IMAGE_ID":"Interlocking Diagrams_Page_057 ; Interlocking Diagrams_Page_059",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 from Hunters Pt to 33 St (Switch 331 is available)",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.14. Blockage: Track C1 from Hunters Pt Av to Grand Central",
+      "IMAGE_ID":"Interlocking Diagrams_Page_057 ; Interlocking Diagrams_Page_056",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from Hunters Pt Av to Grand Central",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.15. Blockage: Track C2 from Grand Central to Hunters Pt Av",
+      "IMAGE_ID":"Interlocking Diagrams_Page_056 ; Interlocking Diagrams_Page_057",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 from Grand Central to Hunters Pt Av",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.16. Blockage: Track C1 from Grand Central to Times Square",
+      "IMAGE_ID":"Interlocking Diagrams_Page_056 ; Interlocking Diagrams_Page_055",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C1 from Grand Central to Times Square",
+      "SUB_PDF_FLAG":"0"
+   },
+   {
+      "PDF_ID":"A.2.5.17. Blockage: Track C2 from Times Square to Grand Central",
+      "IMAGE_ID":"Interlocking Diagrams_Page_055 ; Interlocking Diagrams_Page_056",
+      "LINE":"7",
+      "ATS_ID":"",
+      "SEARCH_DATA":"Blockage: Track C2 from Times Square to Grand Central",
+      "SUB_PDF_FLAG":"0"
+   },
+    {
+      "PDF_ID": "A.2.5.18. Blockage: Track C1 from South of Times Square to 34 Street-Hudson Yds",
+      "IMAGE_ID": "Interlocking Diagrams_Page_056 ; Interlocking Diagrams_Page_054",
+      "LINE": "7",
+      "ATS_ID": "",
+      "SEARCH_DATA": "Blockage: Track C1 from South of Times Square to 34 Street-Hudson Yds",
+      "SUB_PDF_FLAG": "0"
+    },
+  {
+    "PDF_ID": "A.2.5.19. Blockage: Track C2 from 34 Street-Hudson Yds to South of Times Square",
+    "IMAGE_ID": "Interlocking Diagrams_Page_054 ; Interlocking Diagrams_Page_056",
+    "LINE": "7",
+    "ATS_ID": "",
+    "SEARCH_DATA": "Blockage: Track C2 from 34 Street-Hudson Yds to South of Times Square",
+    "SUB_PDF_FLAG": "0"
+  }
+]

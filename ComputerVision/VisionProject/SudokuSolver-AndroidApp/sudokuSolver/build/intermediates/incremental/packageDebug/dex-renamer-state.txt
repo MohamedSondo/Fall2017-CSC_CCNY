@@ -1,0 +1,4 @@
+#Tue Dec 05 04:24:57 EST 2017
+base.0=/Users/epsilon/Desktop/Desktop/DESKTOP/Fall2017/CompVision/VisionProject/SudokuSolver-AndroidApp/sudokuSolver/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/epsilon/Desktop/Desktop/DESKTOP/Fall2017/CompVision/VisionProject/SudokuSolver-AndroidApp/sudokuSolver/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

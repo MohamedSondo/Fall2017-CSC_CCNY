@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings,setspace,mathtools,courier}
+
+\doublespacing{}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+Nelson Batista
+
+CSC 33500 Programming Language Paradigms --- Section R
+
+9/22/16
+
+Homework 3
+
+\section*{1.29}
+
+A solution is given below:
+
+\lstset{basicstyle=\ttfamily}
+\lstinputlisting[language=Lisp]{ex29.scm}
+
+Running \texttt{simpson} with \texttt{cube}, \texttt{0}, and \texttt{1} as the arguments for \texttt{f}, \texttt{a}, and \texttt{b}, respectively, returns 0.25 for both \texttt{n = 100} and \texttt{n = 1000}, so we know the function definitely approximates the correct value for the definite integral of the function $f(n) = n^3$ between 0 and 1.
+
+\section*{1.30}
+
+The substitutions have been made in the following code:
+
+\lstinputlisting[language=Lisp]{ex30.scm}
+
+\section*{1.31}
+
+\subsection*{a}
+
+The \texttt{product} function can be implemented like so:
+
+\lstinputlisting[language=Lisp, linerange=1-5]{ex31.scm}
+
+We can use this function to calculate factorials almost trivially, since a factorial of $n$ is just the multiplication of all the numbers from 1 to $n$. Here is the code:
+
+\lstinputlisting[language=Lisp, linerange=7-10]{ex31.scm}
+
+\end{document}

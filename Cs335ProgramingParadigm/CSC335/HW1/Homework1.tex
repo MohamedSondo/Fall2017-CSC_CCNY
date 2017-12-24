@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools,setspace,courier}
+
+\begin{document}
+\subsection*{1.1}
+
+{\fontfamily{pcr}\selectfont 10}
+
+Outputs \textbf{\texttt{10}}.
+
+{\fontfamily{pcr}\selectfont (+ 5 3 4)}
+
+Outputs \textbf{\texttt{12}}.
+
+{\fontfamily{pcr}\selectfont (- 9 1)}
+
+Outputs \textbf{\texttt{8}}.
+
+{\fontfamily{pcr}\selectfont (/ 6 2)}
+
+Outputs \textbf{\texttt{3}}.
+
+{\fontfamily{pcr}\selectfont (+ (* 2 4) (- 4 6))}
+
+Outputs \textbf{\texttt{6}}.
+
+{\fontfamily{pcr}\selectfont (define a 3)}
+
+No output.
+
+{\fontfamily{pcr}\selectfont (define b (+ a 1))}
+
+No output.
+
+{\fontfamily{pcr}\selectfont (+ a b (* a b))}
+
+Outputs \textbf{\texttt{19}}.
+
+{\fontfamily{pcr}\selectfont (= a b)}
+
+Outputs \textbf{\texttt{\#f}}.
+
+{\fontfamily{pcr}\selectfont (if (and (> b a) (< b (* a b)))
+
+                % compiler whines about this part but trust me it'll be fine
+                % fontdimen2 is the default space width of the current font
+                % don't use \font to change the font though since that ignores size changes
+        \hspace{4\fontdimen2\font} b
+
+        \hspace{4\fontdimen2\font} a)}
+
+Outputs the value of \texttt{b}, which is \textbf{\texttt{4}}.
+
+{\fontfamily{pcr}\selectfont (cond ((= a 4) 6)
+
+        \hspace{5\fontdimen2\font} ((= b 4) (+ 6 7 a))
+
+        \hspace{5\fontdimen2\font} (else 25))}
+
+Outputs the result of \texttt{(+ 6 7 a)}, which is \textbf{\texttt{16}}.
+
+{\fontfamily{pcr}\selectfont (+ 2 (if (> b a) b a))}
+
+Outputs the result of \texttt{(+ 2 b)}, which is \textbf{\texttt{6}}.
+
+{\fontfamily{pcr}\selectfont (* (cond ((> a b) a)
+
+        \hspace{8\fontdimen2\font} ((< a b) b)
+
+        \hspace{8\fontdimen2\font} (else -1))
+
+        \hspace{8\fontdimen2\font} (+ a 1))}
+
+Outputs the result of \texttt{(* b (+ a 1))}, which is \textbf{\texttt{16}}.
+
+\subsection*{1.2}
+
+\[\frac{5 + 4 + (2 - (3 - (6 + \frac{4}{5})))}{3(6-2)(2-7)}\]
+
+\noindent Would become (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7))) in prefix notation.
+
+\subsection*{1.3}
+
+\noindent Procedure must take three numbers as arguments and return the sum of the squares of the two larger numbers.
+
+\noindent A solution would be:
+
+\noindent {\fontfamily{pcr}\selectfont (define (sum-of-squares x y z)
+
+      \hspace{5\fontdimen2\font} (let ((lowest (min x y z)))
+
+      \hspace{10\fontdimen2\font}      (cond ((= x lowest) (+ (* y y) (* z z)))
+
+      \hspace{16\fontdimen2\font}            ((= y lowest) (+ (* x x) (* z z)))
+
+      \hspace{16\fontdimen2\font}            ((= z lowest) (+ (* x x) (* y y))))))}
+
+\subsection*{1.4}
+\noindent The procedure is 
+
+\noindent {\fontfamily{pcr}\selectfont (define (a-plus-abs-b a b)
+
+\hspace{5\fontdimen2\font} ((if (> b 0) + -) a b))}
+
+\noindent The procedure defines a function called \texttt{a-plus-abs-b} which takes two arguments, \texttt{a} and \texttt{b}. If \texttt{b > 0}, it selects the \texttt{+} operator and applies \texttt{a} and \texttt{b} to it. Otherwise, it selects the \texttt{-} operator to apply \texttt{a} and \texttt{b} to. In other words, if \texttt{b} is positive (and thus equal to its absolute value), it is added to \texttt{a} and the result is ``returned'' (for lack of a better word). If \texttt{b} is negative (or zero), it is subtracted from \texttt{a} and ``returned'', taking advantage of the fact that subtracting a negative number from another number is effectively the same as adding the absolute value of that negative number to the other number.
+
+\subsection*{1.5}
+
+\noindent The function returns 0 if the first argument is 0, and it returns the second argument otherwise. Ben tests the function, passing in 0 as the first argument. In an applicative-order interpreter, the expression will cause the program to hang indefinitely. Since \texttt{(p)} is defined as itself, and applicative-order interpreters would evaluate the arguments of a function before taking any further action, the interpreter will be stuck attempting to evaluate \texttt{(p)} before evaluating the rest of the function.
+
+\noindent In a normal-order interpreter, the expression will simply cause the interpreter to output \texttt{0}. Normal-order interpreters do not evaluate arguments to a function until absolutely necessary. As it turns out, the second argument to \texttt{test} does not need to be evaluated in the event that the first argument is 0, which it is in this particular case. The interpreter will thus output \texttt{0}, since there is no need to even attempt to evaluate \texttt{(p)}.
+
+\noindent Incidentally, testing these expressions in \textit{DrRacket} seems to reveal it to be an applicative-order interpreter.
+\end{document}

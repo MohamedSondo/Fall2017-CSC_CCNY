@@ -1,0 +1,20 @@
+8/30/17
+
+Image formation:
+image is a function f(x,y) that repr Intensity, Range image, color. video
+
+how image is generated:radiometry is the amount of light get fomr reflection of sunlight and register by senseor.
+Ligth reflection and matter: can be reflection, refraction,diffraction. absorption, scterring
+
+image Geometry:pinhole camera model
+perspective : Image pass througth center point and image is oppose on the surface.
+
+Depth is obtain by triangulation.
+image: 2D array of brightness
+Geometry: where the image will be projected.
+radiometry:
+    -brightness
+    -images brightness: irradiance
+    -
+
+    irradiance: ls(pi/4)[d/f]^2cos^4alpha;

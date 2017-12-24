@@ -1,0 +1,609 @@
+;Selection sorting.
+;Remember that selection sort works by finding the smallest element and moving it into the first position, then finding the second smallest and moving it into the second position. In general, on the ith iteration, it finds the ith smallest element and move it to position i. This works as follows:
+;(selection '(6 4 5 3 9 3))
+;(cons 3 (selection '(6 4 5 9 3))
+;(cons 3 (cons 3 (selection '(6 4 5 9))
+;(cons 3 (cons 3 (cons 4 (selection '(6 5 9))
+;(cons 3 (cons 3 (cons 4 (cons 5 (selection '(6 9))
+;(cons 3 (cons 3 (cons 4 (cons 5 (cons 6 (selection '(9))
+;(cons 3 (cons 3 (cons 4 (cons 5 (cons 6 (cons 9 (selection '())
+;Which becomes (3 3 4 5 6 9).
+;The scheme code below does exactly this:
+(define (selection L) 
+   (cond ( (null? L) '() )
+         ( else (cons (smallest L (car L))     ; put the smallest element
+                                               ; at the front of the 
+                                               ; current list 
+                      (selection (remove L (smallest L (car L)))))
+                                               ; call selection on the list
+                                               ; minus the smallest
+                                               ; element
+         )
+   )
+)
+
+(define (remove L A)                ; remove the first occurance of atom A from L
+  (cond ( (null? L) '() )           
+        ( (= (car L) A) (cdr L))    ; Match found! 
+        (else (cons (car L)(remove (cdr L) A)))   ; keep searching
+  )
+)
+
+(define (smallest L A)             ; looks for the smallest element in the list
+                                   ; atom A is the current smallest
+  (cond ( (null? L) A)
+        ( (< (car L) A) (smallest (cdr L)(car L)))
+        (else (smallest (cdr L) A ))
+  )
+)
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;Insertion sort Start
+;; same as the merge function in 
+(define (insert L M)
+	(if (null? L) M
+		(if (null? M) L
+			(if (< (car L) (car M))
+				(cons (car L) (insert (cdr L) M))
+				(cons (car M) (insert (cdr M) L))))))
+
+;; another insert function
+;; need to modify the first para in insertionsort function to (car L)
+(define (insert2 x L)
+	(if (null? L) (list x)
+		(let ((y (car L)) (M (cdr L)))
+			(if (< x y)
+				(cons x L)
+				(cons y (insert2 x M))))))
+
+;; Exp. (insertionsort '(4 2 10 3 -1 5)) ==> (-1 2 3 4 5 10)
+(define (insertionsort L)
+	(if (null? L) '()
+		(insert (list (car L)) (insertionsort (cdr L)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;start another insertion sort
+Insertion sort:
+(define (insertion lis)
+   (cond ((null? lis) '() )
+         (else (insert (car lis) (insertion (cdr lis))))
+   )
+)
+
+
+(define (insert element lis)
+   (cond ((null? lis) (list element) )
+         ((> element (car lis))
+             (cons (car lis) (insert element (cdr lis))))
+         (else (cons element lis))
+   )
+)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;start list-reverse
+;; Exp. (list-reverse '(1 (2 3) (4 (5 6) (7 8 (9))))) ==> ((((9) 8 7) (6 5) 4) (3 2) 1)
+(define (list-reverse L)
+	(if (null? L) L
+		(if (list? (car L))
+			(append (list-reverse (cdr L)) (cons (list-reverse (car L)) '()))
+			(append (list-reverse (cdr L)) (list (car L))))))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;;start list flatening
+;;List flattening
+(define (flatten lis)
+  (cond ((null? lis) '() )
+        ((not (list? (car lis)))  (cons (car lis) (flatten (cdr lis))))
+        (else  (append (flatten (car lis)) (flatten (cdr lis))))
+   )
+)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;Start of Best MergeSort
+
+;Merge Sort
+;Mergesort divides the list in half everytime, calling itself on each half. As the recursion unwinds, it merges the sorted list into a new sorted list. For example, assume we have the following:
+;            (mergesort '(6 4 5 7 8 9 3 4))
+;                     /                    \
+;    (mergesort '(6 4 5 7))                 (mergesort '(8 9 3 4))
+;            /             \                   /             \
+;(mergesort '(6 4)) (mergesort '(5 7)) (mergesort '(8 9)) (mergesort '(3 4))
+;At the lowest tree leves, the two element get sorted and the recursion unwinds.
+ ;           (mergesort '(6 4 5 7 8 9 3 4))
+;                     /                    \
+;    (mergesort '(6 4 5 7))                 (mergesort '(8 9 3 4))
+;            /             \                   /             \
+;         (4 6)          (5 7)              (8 9))          (3 4))
+;The next level of recursion:
+;            (mergesort '(6 4 5 7 8 9 3 4))
+;                     /                    \
+;              (4 5 6 7))                 (3 4 8 9)
+;              /     \                     /    \
+;           (4 6)    (5 7)              (8 9))  (3 4))
+;And the final level with merges into the overall list
+;                         (3 4 4 5 6 7 8 9)
+;                          /             \
+;                      (4 5 6 7)      (3 4 8 9)
+;Of course, this is not the actual order that things happen but it give the overall algorithm flavor. In scheme, we can write functions to split lists, and merge sorted lists. Once we have these, the mergesort itself is fairly short.
+
+(define (mergesort L)
+  (cond ((null? L)  '())
+        ((= 1 (length L)) L)
+        ((= 2 (length L)) (mergelists (list (car L))(cdr L)))
+        (else (mergelists (mergesort (car (split L)) ) 
+                          (mergesort (car (cdr (split L))) ) 
+              ))
+  )
+)
+
+(define (mergelists L M)         ; assume L and M are sorted lists
+   (cond ( (null? L) M)
+         ( (null? M) L)
+         ( (< (car L)(car M))
+              (cons (car L) (mergelists (cdr L)M)))
+         (else
+              (cons (car M) (mergelists L (cdr M))))
+   )
+)
+
+
+(define (length L)         ; # elements in a list
+   (cond ( (null? L) 0)
+         (else (+ (length (cdr L)) 1))
+  )
+)
+
+
+(define (sub L start stop ctr)    ; extract elements start to stop into a list
+   (cond ( (null? L) L)
+         ( (< ctr start) (sub (cdr L) start stop (+ ctr 1)))
+         ( (> ctr stop) '() )
+         (else
+            (cons (car L) (sub (cdr L) start stop (+ ctr 1)))
+         )
+   )
+)
+
+(define (split L)                 ; split the list in half:
+                                  ; returns ((first half)(second half))
+    (let ((len (length L)))
+       (cond ((= len 0) (list L L) )
+             ((= len 1) (list L '() ))
+             (else (list (sub L 1 (/ len 2) 1)(sub L (+(/ len 2)1) len 1)
+                   )
+             )
+       )
+     )
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;Start another good mergesort
+;; Exp. (merge '(1 3 5 7 8 9 10) '(2 4 6)) ==> (1 2 3 4 5 6 7 8 9 10)
+(define (merge L M)
+	(if (null? L) M
+		(if (null? M) L
+			(if (< (car L) (car M))
+				(cons (car L) (merge (cdr L) M))
+				(cons (car M) (merge (cdr M) L))))))
+
+;; split helper functions
+(define (odd L)
+	(if (null? L) '()
+		(if (null? (cdr L)) (list (car L))
+			(cons (car L) (odd (cddr L))))))
+(define (even L)
+	(if (null? L) '()
+		(if (null? (cdr L)) '()
+			(cons (cadr L) (even (cddr L))))))
+
+;; Exp. (split '(a b c d e f g h i)) ==> ((a c e g i)(b d f h))
+(define (split L)
+	(cons (odd L) (cons (even L) `())))
+
+;; Exp. (mergesort '(8 1 3 9 6 5 7 2 4 10)) ==> (1 2 3 4 5 6 7 8 9 10)
+(define (mergesort L)
+	(if (null? L) L
+		(if (null? (cdr L)) L
+			(merge
+				(mergesort (car (split L)))
+				(mergesort (cadr (split L)))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;start mergesort from wiki
+define (merge-sort l gt?)
+  (define (merge left right)
+    (cond
+     ((null? left)
+      right)
+     ((null? right)
+      left)
+     ((gt? (car left) (car right))
+      (cons (car right)
+            (merge left (cdr right))))
+     (else
+      (cons (car left)
+            (merge (cdr left) right)))))
+  (define (take l n)
+    (if (zero? n)
+      (list)
+      (cons (car l)
+            (take (cdr l) (- n 1)))))
+  (let ((half (quotient (length l) 2)))
+    (if (zero? half)
+      l
+      (merge (merge-sort (take      l half) gt?)
+             (merge-sort (list-tail l half) gt?)))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;end wiki
+
+;;;Start new Mergesort
+; Split: input is a list of objects, output is a list of two lists of
+;   approximately equal size such that the set of all objects in both
+;   lists is the same as the set of objects in the input list.
+
+(define split
+  (lambda (l)
+    (if (null? l)
+        (list '() '())
+        (if (null? (cdr l))
+            (list l '())
+            (let ((rest (split (cdr (cdr l)))))
+              (list (cons (car l) (car rest))
+                    (cons (car (cdr l)) (car (cdr rest)))))))))
+
+; Merge: input is two lists of numbers in increasing order, output is
+;   a list of numbers in increasing order consisting of exactly those
+;   numbers in the input list.
+
+(define merge
+  (lambda (l1 l2)
+    (if (null? l1)
+        l2
+        (if (null? l2)
+            l1
+            (if (< (car l1) (car l2))
+                (cons (car l1) (merge (cdr l1) l2))
+                (cons (car l2) (merge (cdr l2) l1)))))))
+                
+; Merge-sort: input is a list of numbers, output is that list sorted
+
+(define merge-sort
+  (lambda (l)
+    (if (null? l)
+        '()
+        (if (null? (cdr l))
+            l
+            (let ((s (split l)))
+              (let ((a (car s)) (b (car (cdr s))))
+                (merge (merge-sort a) (merge-sort b))))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;end 
+
+;;; -----------------------------One Merge Sort in Scheme
+;;; Merge two lists of numbers which are already in increasing order
+
+  (define merge-lists
+    (lambda (l1 l2)
+      (if (null? l1)
+          l2
+          (if (null? l2)
+              l1
+              (if (< (car l1) (car l2))
+                  (cons (car l1) (merge-lists (cdr l1) l2))
+                  (cons (car l2) (merge-lists (cdr l2) l1)))))))
+
+;;; -------------------------------------------------------------------
+;;; Given list l, output those tokens of l which are in even positions
+
+  (define even-numbers
+    (lambda (l)
+      (if (null? l)
+          '()
+          (if (null? (cdr l))
+              '()
+              (cons (car (cdr l)) (even-numbers (cdr (cdr l))))))))
+
+;;; -------------------------------------------------------------------
+;;; Given list l, output those tokens of l which are in odd positions
+
+  (define odd-numbers
+    (lambda (l)
+      (if (null? l)
+          '()
+          (if (null? (cdr l))
+              (list (car l))
+              (cons (car l) (odd-numbers (cdr (cdr l))))))))
+
+;;; ---------------------------------------------------------------------
+;;; Use the procedures above to create a simple and efficient merge-sort
+
+  (define merge-sort
+    (lambda (l)
+      (if (null? l)
+          l
+          (if (null? (cdr l))
+              l
+              (merge-lists
+                (merge-sort (odd-numbers l))
+                (merge-sort (even-numbers l)))))))
+
+;;; -------------------------------------------------------
+;;; examples (the semi-colons are only for commenting)
+
+  (define a (even-numbers '(2 7 6 5 4 5 6 7 4)))
+  ;(7 5 5 7)
+  (define b (odd-numbers '(2 7 6 5 4 5 6 7 4)))
+  ;(2 6 4 6 4)
+  (define c (merge-sort '(3 4 5 2 3 8 9 70 34 23 12 3 45 34)))
+  ;(2 3 3 3 4 5 8 9 12 23 34 34 45 70)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;Start BTS
+;Binary Tree sort
+;The binary tree sort works by building a binary search tree from the input and then traversing it. A binary search tree has the following property at each tree node with value V:
+;any nodes in the left subtree have values < V
+;any nodes in the right subtree have values >= V
+;If we can build such a tree from the input, than a inorder visit finds the elements in the correct order.
+
+
+; We are going to represent each node in a binary tree as:
+;  (value (left child)(right child))  If the node has no left 
+;  and/or right child, this is represented with ().  So,
+;  (2 (1()())(3()()))  is the tree:   2
+;                                   /   \
+;                                  1     3
+
+
+(define (binarysort L)
+  (if (null? L) '()
+     (traverse (btree L))
+))
+
+(define (btree L)
+  (if (= (length L) 1) (leaf (car L))
+        (binsert (btree (cdr L)) (car L))
+  )
+)
+
+
+(define (binsert T A)     ; insert A into the tree
+   (cond  ( (null? T) (leaf A) )        ; insert here
+          ( (> (car T) A) (list (car T) 
+                                (binsert (car (cdr T)) A)
+                                (car (cdr (cdr T))))
+           )  ; left subtree 
+          ( else (list (car T)
+                       (car (cdr T)) 
+                       (binsert (car (cdr (cdr T))) A))     ; right subtree
+          )
+    )
+)
+
+(define (leaf A)          ; add a leaf to the tree (A ()())
+   (list A '() '())
+)
+
+(define (traverse L)   ; output sorted list by traversing the tree 
+  (cond ( (null? L) L)
+        ( else
+           (append (traverse (car (cdr L)))
+                   (cons (car L)(traverse (car (cdr (cdr L))))))
+        )
+  )
+)
+
+(define (length L)
+  (if (null? L) 0
+     (+ 1 (length (cdr L)))
+  )
+)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;; More scheme practice
+(define (lookup l n)
+  (if (> n 0) (lookup1 l n 1)
+        -1)
+)
+
+(define (lookup1 l n ctr)
+    (cond ( (null? l) -1 )
+          ( (= ctr n) (car l) )
+          ( else (lookup1 (cdr l) n (+ ctr 1)) )
+    )
+)
+
+
+(define (update l n x)
+   (update1 l n x 1)
+)
+
+(define (update1 l n x ctr)
+  (cond ( (null? l) '() )
+        ( (= ctr n) (cons x (cdr l)) )
+        ( else (cons (car l) (update1 (cdr l) n x (+ ctr 1)))   )
+   )
+)
+Selection Sort
+(define (remove_item l item)
+   (cond ( (null? l) l)
+         ( (= (car l) item) (cdr l) )
+         (else (cons (car l) (remove_item (cdr l) item))  )
+   )
+)
+
+
+(define (smallest l item)
+    (cond ( (null? l) item)
+          ( (<= item (car l))   (smallest (cdr l) item) )
+          (else (smallest (cdr l) (car l)))
+    ) 
+)
+
+(define (selection l)
+   (cond ( (null? l) l )
+         ( else
+             (let  ((s (smallest (cdr l)(car l))))
+                  (cons s (selection (remove_item l s)))
+             )
+         )
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;end
+;; Start btree
+(define (printtree tree)
+   (if (null? tree) '()
+       (append (printtree (cadr tree)) (list (car tree))(printtree (caddr tree)))
+   ) 
+)
+
+(define (addtree tree new)
+    (cond ( (null? tree) (list new '() '()) )
+          ( (<= new (car tree) )  
+                (list (car tree) (addtree (cadr tree) new)(caddr tree)) )
+          (else
+                (list(car tree) (cadr tree) (addtree (caddr tree) new)) )
+    )
+)
+
+
+(define (btreesort lis)
+   (printtree (treesort lis))
+)
+
+(define (treesort lis)
+  (if (null? lis) '() 
+      (addtree (treesort (cdr lis)) (car lis))
+  )
+)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;end
+;;Start quicksort
+Partition function for quicksort
+(define (partition lis)    ; ((<= part) part (> part)) will be returned
+            (part (cdr lis) (car lis))
+)
+
+
+
+(define (part lis pivot)
+  (cond
+    ((null? lis) '(() pivot ()) )
+    (else 
+      (let   ( (r (part (cdr lis) pivot ) ) )   ; recursive call which will
+                                                ; return a list with structure
+                                                ; ( (<= pivot) pivot (> pivot))
+             (cond
+               ((> (car lis) pivot)  ; add to > list
+                 (cons (car r) (list pivot (cons (car lis) (car (cdr (cdr r)))))
+)
+               )
+               (else     ; add to <= list
+                  (cons (cons (car lis) (car r)) (cdr r))
+               ) ; else
+             ) ;cond 
+      ) ; let
+    ) ; else
+  )  ; cond
+)
+
+(define (quicksort lis)
+   (cond ((null? lis) '() )
+         ((null? (cdr lis)) lis)
+         (else
+           (let  ((new (partition lis)) )
+             (append (quicksort (car new))
+               (cons (car (cdr new))             ; pivot element
+                  (quicksort (car (cdr (cdr new))))
+               )
+             )
+           )
+         )  ;else
+   ) ;cond
+) ; fun
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;end quicksort
+
+;;;;;start BFS
+(define (breadth-first-search item tree) 
+  (let ((current-tree (first tree))) 
+    (display tree) 
+    (newline) 
+    (cond ((null? tree) #f)                      ;; search ended 
+          ((atom? current-tree)                  ;; leaf 
+           (or (equal? item current-tree) 
+               (breadth-first-search item (cdr tree)))) 
+          ((equal? item (first current-tree)))   ;; item found 
+          (else 
+           (breadth-first-search 
+            item 
+            (append 
+             (rest tree) 
+             (list 
+              (second current-tree) 
+              (third current-tree)))))))) 
+(breadth-first-search 'f '((13 (a b c) (d e f)))) 
+and linear: 
+(define (traverse-tree item tree) 
+  (display tree) 
+  (newline) 
+  (cond ((null? tree) #f) 
+        ((atom? tree) (equal? item tree)) 
+        ((equal? item (first tree)) #t) 
+        (else 
+         (or 
+          (traverse-tree item (second tree)) 
+          (traverse-tree item (third tree)))))) 
+(display (traverse-tree 'f '(13 (a b c) (d e f))))
+
+;f each node has a key associated with it, then, the breadh-first 
+;search would be faster.  It would beO(LOGmN) 
+;where m is the  average number of branches per node, and N 
+;is the number of items in the tree.  In such a tree, of course, depth first 
+;search would not make any sense. 
+;;;;;;;;;;;;end BFS
+
+;;;;;;;;;;;;;;;;star Dfs
+
+ ;    We have a directed graph G = (A,V) and we assume that all
+;     vertices have an attribute called (mark v), where (mark v) is set to
+  ;   "unvisited" for all vertices v in (V G). 
+
+   ;  Select some vertex of (V G), call it s, as a starting vertex and mark 
+   ;  vertex s as visited.
+
+    ; Each vertex w adjacent to s that has (mark w) equal to "unvisited" is
+    ; then searched in turn using depth first search recursively.
+
+    ; Once all vertices that can be reached from s have been visited the
+     ;search from s is complete
+
+(define (recursive-dfs s G)
+  (let ((mark (make-vector (+ 1 (n G)) #f))                          ;(1)
+	(visited '()))                                               ;(2)
+  (define (dfs' w)                                                   ;(3)
+    (cond ((not (vector-ref mark w))                                 ;(4)
+	   (vector-set! mark w #t)                                   ;(5)
+	   (set! visited (cons w visited))                           ;(6)
+	   (do ((unvisited (adjacent-to w G) (cdr unvisited)))       ;(7)
+	       ((null? unvisited))                                   ;(8)
+	     (dfs' (first unvisited))))))                            ;(9)
+  (dfs' s)                                                           ;(10)
+  visited))                                                          ;(11)
+;;;
+;;; Depth first search from starting vertex s in graph G
+;;;
+;;; (1) Vector element (vector-ref mark w) is #t if vertex w has been visited
+;;;     otherwise (vector-ref mark w) is #f
+;;; (2) visited is a list of vertices, giving the vertices in reverse 
+;;;     order as visited by a dfs from vertex s in G
+;;; (3) Local recursive function dfs' ... this is for cosmetics
+;;;     saving us having to pass in the vector mark every call
+;;; (4) If we have not already visited the vertex w ...
+;;; (5) ... then set w's mark ast true ...
+;;; (6) ... push w onto the set of visited vertices ...
+;;; (7-9) ... then make recursive calls to dfs' from the vertices 
+;;;           adjacent to w in G
+;;;
+;;;

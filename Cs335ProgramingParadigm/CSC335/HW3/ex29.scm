@@ -1,0 +1,16 @@
+(define (simpson f a b n)
+  (let ((h (/ (- b a) n)))
+    (* (/ h 3) (simpson-iter f a b n 0 0))))
+
+(define (simpson-iter f a b n count result)
+  (let ((h (/ (- b a) n)))
+    (cond ((> count n) result)
+          ((or (= count 0) (= count n))
+           (simpson-iter f a b n (+ count 1)
+                         (+ result (f (+ a (* count h))))))
+          ((= (modulo count 2) 0)
+           (simpson-iter f a b n (+ count 1)
+                         (+ result (* 2 (f (+ a (* count h)))))))
+          (else
+           (simpson-iter f a b n (+ count 1)
+                         (+ result (* 4 (f (+ a (* count h))))))))))

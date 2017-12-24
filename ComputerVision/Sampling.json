@@ -1,0 +1,28 @@
+  Effect of Sampling interval:
+  sampling interval is equal to size of structure.
+
+Spatial sampling; Rate cannot be larger than Half of it.
+Interpolation of up and downsampling.
+  sampling theor. if size of smallest structure to be preserv is d, then
+  the sampling interval must not be larger than d/2.
+
+  -Quantization is opposite to sampling.
+  2^k
+  Color Gray Level.
+Tesselation Pattern.
+
+hexagonal, Rectangular, Typical, Triangular.
+
+Pixel: Picture element or Pixel.
+Each point in a digital image.
+Eaxch Pixel has l(i,j)
+Binary(0,1)
+
+Binary image with multiple Object.
+Separate object must be label individually.
+Label neighhoor base on the same Value. Use recursion for labeling.
+Algorithm.
+-scan, if label then Skip, then do recursion until end.
+
+Alternate neighhoor Definition:
+4 niegh(object), 8 neigh(bacground)

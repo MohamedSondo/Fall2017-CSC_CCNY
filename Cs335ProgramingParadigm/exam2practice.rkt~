@@ -1,0 +1,13 @@
+(define lst '( 1 2 3 4 5))
+;; we first check to see if our lst is null, if yes return 0
+;;else we add 1 to the recursive call on the cdr, 
+(define mylength(lambda(lst)
+                (if(null? lst) 0
+                (+ 1 (mylength(cdr lst))))))
+
+(mylength lst )
+
+(define sum-list(lambda(lst))
+  (if(null? lst) 0
+     (+ (car lst) (sum-list(cdr)))))
+(sum-list lst)

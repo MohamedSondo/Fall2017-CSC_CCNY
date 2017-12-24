@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/epsilon/Downloads/SudokuSolver-AndroidStu/C:\\AndroidProjects\\SudokuSolver-AndroidStudio\\sudokuSolver\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/epsilon/Downloads/SudokuSolver-AndroidStu/C:\\AndroidProjects\\SudokuSolver-AndroidStudio\\sudokuSolver\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "/Users/epsilon/Downloads/SudokuSolver-AndroidStu/sudokuSolver/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/Users/epsilon/Downloads/SudokuSolver-AndroidStu/sudokuSolver/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-v23/abc_control_background_material.xml"
+    },
+    {
+        "merged": "/Users/epsilon/Desktop/Desktop/DESKTOP/Fall2017/CompVision/VisionProject/SudokuSolver-AndroidApp/sudokuSolver/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/Users/epsilon/Desktop/Desktop/DESKTOP/Fall2017/CompVision/VisionProject/SudokuSolver-AndroidApp/sudokuSolver/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-v23/abc_control_background_material.xml"
+    }
+]

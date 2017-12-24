@@ -1,0 +1,15 @@
+//------------------------8/28/2017 First day of Classes.
+
+Solvable and Unsolvable problem:
+Given a super program SP Which return YEs if p(w)=halt
+no, otherwise
+
+Problem when solve( is either Easy or hard.
+Probelm is trackage* run on polynomial time.
+                   
+                   Abstract model of a Computer.
+                   
+
+Using the Church Thesis: Reasoble model of computation.
+                   Basic PArt of Machine:
+                   ALu, CU, machine computation(SIMD, MISD, MIMD)

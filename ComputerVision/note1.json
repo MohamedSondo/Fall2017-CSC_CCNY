@@ -1,0 +1,53 @@
+8/28/17
+
+Computer Vison note.
+images are matrice of number.
+Agenda( total of 27 ,meeting)
+1- Vision Basics
+ digital image, formation and processing
+most homework in matlab
+
+lecture 3 and 4( images enhancement), image processing
+edge dectection.
+
+2- 3 D images
+mostly geometry of object.
+camera model
+
+camera calibration.
+being able to recover camera parameter by reverse eng the image and tell the specs of the camera.
+
+3d computer vison( will include motion vision)
+//----------------------------------------------------------
+for course project, we may want to use OpenCV, C++, Java Python
+HW=40%
+exam 20%
+---------------------
+Difference between Image processing and computer vision
+compVision( given image sequence, you recover 3d model and iD object)( not just simple Transformation, motion, produce more images)
+CompGraphic( input is image and output is image)
+
+AI( Pattern Recognition)- now moslty machine learning
+not just images, Field that req data analytics
+
+Application use in computer vision( photogrametry, medical imaging(CT, MRI, 3D), video(encoding, decoding, compression and transmission)
+
+Computer vison application( Visual Inspection, robotics, iintelligent image)
+
+job market( Homeland Security, surveillance)
+Media production(cartoon, moovie, tv, photography)
+ Virtual Reality( 2d and 3D virtual walk through
+Comsumer medical ressouce
+//------------------------------------------------------------------------------------------
+
+Lesson1- What is computer vision
+Vision is the art of seeing things invisible.
+
+determing from an image sequence the object present in the scene, relationship between the observe and the scene, the structure and model.
+-direct Measurable in an image
+Spectral characteristic(intensity, color, and ther spatial distribution)
+2d shapes of contours
+Linear Perspective
+
+
+

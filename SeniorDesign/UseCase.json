@@ -1,0 +1,59 @@
+
+
+Summary of Overall System:
+Social Apps that allow translation
+
+
+WebRTC
+FireBase
+Speech to Text
+Translation
+
+Video Chat
+
+
+How does the User Interact with the system?
+
+Entities:
+
+Users:{
+  Username
+  Passwaord
+  email: for verification
+  Age:18 Above
+  Contact List
+Transcript for chat
+TRanscript for Video.
+
+
+
+
+}
+
+Chat:{
+  USer to User:
+  Uses TTS or STT to Send message back and forth with option of translation.
+  Users have Default configuration.
+  Chat Transcrip available.
+}
+VideoCHat{
+  Users: Button Allow User to speak, language is detected then printed and send to Users
+  User Setup language choice in the Begining.
+  User to User
+  not group video Chat
+
+}
+
+Registration process:{
+  User
+  
+}
+
+
+
+
+technologies: OBjective C and some swift for IOS
+Java for Android.
+Firebase: NOSQL database provide by Google.
+VAlidation Step After User submit information
+After validation the User is register in our database
